@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Avenger</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700">
+    <!-- owl carousel-->
+    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Leaflet CSS - For the map-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="favicon.png">
+  </head>
+  <body>
+    <!-- navbar-->
+    <header class="header mb-5">
+      <!--
+      *** TOPBAR ***
+      _________________________________________________________
+      -->
+      <div id="top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 text-center text-lg-right">
+              <ul class="menu list-inline mb-0">
+                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
+                <li class="list-inline-item"><a href="index.html">Home</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Customer login</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+              </div>
+              <div class="modal-body">
+                <form action="customer-orders.html" method="post">
+                  <div class="form-group">
+                    <input id="email-modal" type="text" placeholder="email" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <input id="password-modal" type="password" placeholder="password" class="form-control">
+                  </div>
+                  <p class="text-center">
+                    <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
+                  </p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- *** TOP BAR END ***-->
+        
+        
+      </div>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container"><a href="index.html" class="navbar-brand home"><img src="images/logo1.png" style="width:67px;height:50px;" alt="Avenger" class="d-none d-md-inline-block"><img src="images/logo1.png" style="width:67px;height:50px;" alt="Avenger" class="d-inline-block d-md-none"><span class="sr-only">Avenger - go to homepage</span></a>
+          <div class="navbar-buttons">
+            <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
+            <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button><a href="basket.html" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
+          </div>
+          <div id="navigation" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+              <li class="nav-item dropdown menu-large size-md"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Sneaker<b class="caret"></b></a>
+                <ul class="dropdown-menu megamenu">
+                  <li>
+                    <div class="row">
+                      <div class="col-md-6 col-md-3">
+                        <h5>Yeezy</h5>
+                        <ul class="list-unstyled mb-3">
+                          <li class="nav-item"><a href="350v2.html" class="nav-link">350_v2</a></li>
+                          <li class="nav-item"><a href="700.html" class="nav-link">700</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-md-6 col-lg-3">
+                          <div class="banner"><a href="#"><img src="images/wave.jpg" alt="" class="img img-fluid"></a></div>
+                          <div class="banner"><a href="#"><img src="images/true_form.png" alt="" class="img img-fluid"></a></div>
+
+                      </div>
+                      <div class="col-md-6 col-lg-3">
+                          <div class="banner"><a href="#"><img src="images/Static_all.jpg" alt="" class="img img-fluid"></a></div>
+                          <div class="banner"><a href="#"><img src="images/black_v2.png" alt="" class="img img-fluid"></a></div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div class="navbar-buttons d-flex justify-content-end">
+              <!-- /.nav-collapse-->
+              <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse" href="#search" class="btn navbar-btn btn-primary d-none d-lg-inline-block"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></a>
+              <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span id="myspan">0</span></a></div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="search" class="collapse">
+        <div class="container">
+          <form role="search" class="ml-auto">
+            <div class="input-group">
+              <input type="text" placeholder="Search" class="form-control">
+              <div class="input-group-append">
+                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div id="all">
+      <div id="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <!-- breadcrumb-->
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li aria-current="page" class="breadcrumb-item active">Contact</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="col-lg-3">
+              <!--
+              *** PAGES MENU ***
+              _________________________________________________________
+              -->
+              <div class="card sidebar-menu mb-4">
+                <div class="card-header">
+                  <h3 class="h4 card-title">Pages</h3>
+                </div>
+                <div class="card-body">
+                  <ul class="nav nav-pills flex-column">
+                    <li><a href="aboutus.html" class="nav-link">About Us</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact page</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- *** PAGES MENU END ***-->
+            </div>
+            <div class="col-lg-9">
+              <div id="contact" class="box">
+                <h1>Contact</h1>
+                <p>Please feel free to contact us, our customer service center is working for you 24/7.</p>
+                <hr>
+                <div class="row">
+                  <div class="col-md-4">
+                      <h3 class="mb-3">Where to find us</h4>
+                      <p><strong>RMIT.</strong><br>702 Nguyen Van Linh<br>Tan Hung<br>District 7<br>VIetNam<br><strong>Ho Chi Minh City</strong></p>
+                      <hr class="d-block d-md-none">
+                  </div>
+                  <!-- /.col-sm-4-->
+                  <div class="col-md-4">
+                    <h3><i class="fa fa-phone"></i> Call center</h3>
+                    <p><strong>+84 08 1900 9979</strong></p>
+                  </div>
+                  <!-- /.col-sm-4-->
+                  <div class="col-md-4">
+                    <h3><i class="fa fa-envelope"></i> Software support</h3>
+                    <p class="text-muted">Please feel free to write an email to us.</p>
+                    <ul>
+                      <li><strong><a href="mailto:">info@avenger.com</a></strong></li>
+                    </ul>
+                  </div>
+                  <!-- /.col-sm-4-->
+                </div>
+                <!-- /.row-->
+                <hr>
+                <div id="map"></div>
+                <hr>
+                <h2>Contact form</h2>
+                <form >
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="firstname">Firstname</label>
+                        <input id="firstname" type="text" class="form-control" value = "" >
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="lastname">Lastname</label>
+                        <input id="lastname" type="text" class="form-control" value = "" >
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" type="text" class="form-control" value = "" >
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input id="subject" type="text" class="form-control" value = "" >
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" value = "" ></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12 text-center">
+                      <button type = "submit" onClick = "saveForm()" class="btn btn-primary" ><i class="fa fa-envelope-o"></i> Send message</button>
+                    </div>
+                  </div>
+                  <!-- /.row-->
+                </form>
+              </div>
+            </div>
+            <!-- /.col-md-9-->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+    *** FOOTER ***
+    _________________________________________________________
+    -->
+    <div id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <h4 class="mb-3">Pages</h4>
+              <ul class="list-unstyled">
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+              </ul>
+              <hr>
+              <h4 class="mb-3">User section</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+              </ul>
+            </div>
+            <!-- /.col-lg-3-->
+            <div class="col-lg-3 col-md-6">
+                <h4 class="mb-3">Top categories</h4>
+                <h5>Sneaker</h5>
+                <ul class="list-unstyled">
+                  <li><a href="350v2.html">350_v2</a></li>
+                  <li><a href="700.html">700</a></li>
+                </ul>
+              </div>
+            <!-- /.col-lg-3-->
+            <div class="col-lg-3 col-md-6">
+              <h4 class="mb-3">Where to find us</h4>
+              <p><strong>RMIT.</strong><br>702 Nguyen Van Linh<br>Tan Hung<br>District 7<br>VIetNam<br><strong>Ho Chi Minh City</strong></p><a href="contact.html">Go to contact page</a>
+              <hr class="d-block d-md-none">
+            </div>
+            <!-- /.col-lg-3-->
+            <div class="col-lg-3 col-md-6">
+              <h4 class="mb-3">Get the news</h4>
+              <form>
+                <div class="input-group">
+                  <input type="text" class="form-control"><span class="input-group-append">
+                    <button type="button" class="btn btn-outline-secondary">Subscribe!</button></span>
+                </div>
+                <!-- /input-group-->
+              </form>
+              <hr>
+              <h4 class="mb-3">Stay in touch</h4>
+              <p class="social"><a href="#" class="facebook external"><i class="fa fa-facebook"></i></a><a href="#" class="twitter external"><i class="fa fa-twitter"></i></a><a href="#" class="instagram external"><i class="fa fa-instagram"></i></a><a href="#" class="gplus external"><i class="fa fa-google-plus"></i></a><a href="#" class="email external"><i class="fa fa-envelope"></i></a></p>
+            </div>
+            <!-- /.col-lg-3-->
+          </div>
+          <!-- /.row-->
+        </div>
+        <!-- /.container-->
+      </div>
+      <!-- /#footer-->
+      <!-- *** FOOTER END ***-->
+    
+    
+    <!--
+    *** COPYRIGHT ***
+    _________________________________________________________
+    -->
+    <div id="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-2 mb-lg-0">
+            <p class="text-center text-lg-left">©2019 Your name goes here.</p>
+          </div>
+          <div class="col-lg-6">
+            <p class="text-center text-lg-right">Template design by <a href="https://bootstrapious.com/p/big-bootstrap-tutorial">Bootstrapious</a>
+              <!-- If you want to remove this backlink, pls purchase an Attribution-free License @ https://bootstrapious.com/p/obaju-e-commerce-template. Big thanks!-->
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- *** COPYRIGHT END ***-->
+    <!-- JavaScript files-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHUS7cKmkH8dTbn3VVDoDIubnGug9Jmcg&callback=initMap"
+    async defer></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
+    <script src="js/front.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"> </script>
+    <script src="js/map.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
